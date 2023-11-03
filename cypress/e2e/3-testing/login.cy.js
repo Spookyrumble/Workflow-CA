@@ -1,5 +1,5 @@
 describe("Login Modal Test", () => {
-  it("should allow a user to log in", () => {
+  it("should allow a valid user to log in", () => {
     cy.visit("/");
     cy.wait(500);
     cy.get("#registerModal").contains("Login").click();
