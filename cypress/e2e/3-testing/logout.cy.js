@@ -21,6 +21,7 @@ describe("Logout test", () => {
       cy.wait(2000);
       cy.get("button[data-auth=logout]").contains("Logout").click();
       cy.wait(500);
+      // check storage for token deletion
       cy.window().then((window) => {
         const tokenAfterLogout =
           window.localStorage.getItem("token") ||
