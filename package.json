@@ -2,6 +2,7 @@
   "name": "hma-workflow-ca",
   "version": "1.0.0",
   "description": "Using the skills and knowledge from this course, improve the quality of a package by establishing helpful workflows that make the development process more efficient.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
