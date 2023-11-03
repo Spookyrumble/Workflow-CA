@@ -4,6 +4,8 @@
   "description": "Using the skills and knowledge from this course, improve the quality of a package by establishing helpful workflows that make the development process more efficient.",
   "main": "index.js",
   "scripts": {
+    "test": "npm run test-unit",
+    "test-unit": "jest",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
   },
@@ -11,6 +13,7 @@
   "author": "Noroff, HMA",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^29.2.0",
     "live-server": "^1.2.2",
     "sass": "^1.54.8"
   },
