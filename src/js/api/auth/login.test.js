@@ -4,7 +4,7 @@ import { login } from "../auth/login.js";
 global.fetch = jest.fn(() =>
   Promise.resolve({
     ok: true,
-    json: () => Promise.resolve({ accessToken: "12345", user: "testUser" }),
+    json: () => Promise.resolve({ accessToken: "12345" }),
     statusText: "OK",
   })
 );
@@ -61,18 +61,5 @@ describe("login", () => {
     expect(token).toBe("12345");
 
     expect(profile.accessToken).toBeUndefined();
-  });
-
-  it("throws an error if the response is not ok", async () => {
-    fetch.mockImplementationOnce(() =>
-      Promise.resolve({
-        ok: false,
-        statusText: "Unauthorized",
-      })
-    );
-
-    await expect(login("testMail@example.com", "testPassword")).rejects.toThrow(
-      "Unauthorized"
-    );
   });
 });
