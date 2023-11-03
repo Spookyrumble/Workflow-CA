@@ -3,7 +3,7 @@ const correctPassword = "socialmedia";
 const wrongEmail = "wrongEmail@wrong.wrong";
 const wrongPassword = "wrongPassword";
 
-describe("Login email test", () => {
+describe("Login flow", () => {
   it("should deny empty input submit", () => {
     cy.visit("/");
     cy.wait(500);
