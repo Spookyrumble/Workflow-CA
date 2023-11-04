@@ -36,7 +36,7 @@ describe("login", () => {
 
     await login(email, password);
 
-    const token = JSON.parse(localStorage.getItem("token")); // Assuming the login function stores it under "accessToken"
+    const token = JSON.parse(localStorage.getItem("token"));
     expect(token).toBe("12345");
   });
 });
