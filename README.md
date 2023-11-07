@@ -1,6 +1,7 @@
 # Workflow CA
 
 **Status:**
+
 [![Automated E2E Testing](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/E2E-test.yml/badge.svg)](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/E2E-test.yml)
 [![Automated Unit Testing](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/unit-test.yml)
 [![Code Review](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/gpt.yml/badge.svg)](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/gpt.yml)
