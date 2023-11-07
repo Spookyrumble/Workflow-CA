@@ -54,7 +54,7 @@ The E2E tests that the login works as intended. The user will not be able to log
 - To run Cypress tests in the command line: npm run test-e2e-cli
 
 The unit tests that the login function saves the user's JWT token in storage and that it is removed when logging out.
-**Jest unit-tests are located with the \*.js files they are testing. In this case /src/js/api/auth/**
+**Jest unit-tests are located with the files they are testing. In this case /src/js/api/auth/**
 
 - To run Jest tests: npm run test
 
