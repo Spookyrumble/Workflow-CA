@@ -45,9 +45,9 @@ Here are some common commands and tasks you can execute to interact with the pro
 
 The tests are configured to run automatically on Pull Requests. This ensures that every change proposed goes through a rigorous testing process, catching issues early and maintaining code quality throughout the development cycle.
 
-The E2E tests checks that the login works as intended. User will not be able to login with wrong or unknown credentials and that a user can log out correctly and safely.
+The E2E tests that the login works as intended. The user will not be able to log in with wrong or unknown credentials, and the user can log out correctly and safely.
 
-The unit tests checks that the login function saves the users JWT token in storage and that it is removed when logging out.
+The unit tests that the login function saves the user's JWT token in storage and that it is removed when logging out.
 
 # Status Badges
 
