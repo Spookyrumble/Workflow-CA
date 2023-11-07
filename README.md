@@ -1,5 +1,11 @@
 # Workflow CA
 
+**Status:**
+[![Automated E2E Testing](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/E2E-test.yml/badge.svg)](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/E2E-test.yml)
+[![Automated Unit Testing](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/unit-test.yml)
+[![Code Review](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/gpt.yml/badge.svg)](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/gpt.yml)
+[![Deploy static content to Pages](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/pages.yml/badge.svg)](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/pages.yml)
+
 This project is focused on improving the quality of a software package by implementing effective development workflows, leveraging the knowledge and skills acquired in our course. It encompasses the use of various web technologies and testing tools to ensure a more efficient and error-resilient development process.
 
 ## Description
@@ -48,16 +54,6 @@ The tests are configured to run automatically on Pull Requests. This ensures tha
 The E2E tests that the login works as intended. The user will not be able to log in with wrong or unknown credentials, and the user can log out correctly and safely.
 
 The unit tests that the login function saves the user's JWT token in storage and that it is removed when logging out.
-
-# Status Badges
-
-[![Automated E2E Testing](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/E2E-test.yml/badge.svg)](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/E2E-test.yml)
-
-[![Automated Unit Testing](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/unit-test.yml)
-
-[![Code Review](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/gpt.yml/badge.svg)](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/gpt.yml)
-
-[![Deploy static content to Pages](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/pages.yml/badge.svg)](https://github.com/Spookyrumble/Workflow-CA/actions/workflows/pages.yml)
 
 ## Credits
 
