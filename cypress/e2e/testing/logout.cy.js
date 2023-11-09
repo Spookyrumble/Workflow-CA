@@ -5,8 +5,8 @@ describe("Logout test", () => {
     cy.get("#registerModal").contains("Login").click();
     cy.wait(500);
     cy.get("#loginForm").should("be.visible");
-    cy.get("#loginEmail").type("correctEmail");
-    cy.get("#loginPassword").type("correctPassword");
+    cy.get("#loginEmail").type("cypressTesterHMA@noroff.no");
+    cy.get("#loginPassword").type("socialmedia");
     cy.get("button[type=submit]").contains("Login").click();
     cy.wait(2000);
     // check storage for token
