@@ -1,8 +1,3 @@
-const correctEmail = "cypressTesterHMA@noroff.no";
-const correctPassword = "socialmedia";
-const wrongEmail = "wrongEmail@wrong.wrong";
-const wrongPassword = "wrongPassword";
-
 describe("Login flow", () => {
   it("should deny empty input submit", () => {
     cy.visit("/");
@@ -20,7 +15,7 @@ describe("Login flow", () => {
     cy.get("#registerModal").contains("Login").click();
     cy.wait(500);
     cy.get("#loginForm").should("be.visible");
-    cy.get("#loginEmail").type(correctEmail);
+    cy.get("#loginEmail").type("correctEmail");
     cy.get("button[type=submit]").contains("Login").click();
     cy.get("#loginPassword:invalid").should("exist");
   });
@@ -31,7 +26,7 @@ describe("Login flow", () => {
     cy.get("#registerModal").contains("Login").click();
     cy.wait(500);
     cy.get("#loginForm").should("be.visible");
-    cy.get("#loginEmail").type(wrongEmail);
+    cy.get("#loginEmail").type("wrongEmail");
     cy.get("button[type=submit]").contains("Login").click();
     cy.get("#loginEmail:invalid").should("exist");
   });
@@ -42,8 +37,8 @@ describe("Login flow", () => {
     cy.get("#registerModal").contains("Login").click();
     cy.wait(500);
     cy.get("#loginForm").should("be.visible");
-    cy.get("#loginEmail").type(correctEmail);
-    cy.get("#loginPassword").type(wrongPassword);
+    cy.get("#loginEmail").type("correctEmail");
+    cy.get("#loginPassword").type("wrongPassword");
     cy.get("button[type=submit]").contains("Login").click();
   });
 
@@ -53,8 +48,8 @@ describe("Login flow", () => {
     cy.get("#registerModal").contains("Login").click();
     cy.wait(500);
     cy.get("#loginForm").should("be.visible");
-    cy.get("#loginEmail").type(correctEmail);
-    cy.get("#loginPassword").type(correctPassword);
+    cy.get("#loginEmail").type("correctEmail");
+    cy.get("#loginPassword").type("correctPassword");
     cy.get("button[type=submit]").contains("Login").click();
   });
 });

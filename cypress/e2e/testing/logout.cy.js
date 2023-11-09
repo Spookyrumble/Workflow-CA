@@ -1,6 +1,3 @@
-const correctEmail = "cypressTesterHMA@noroff.no";
-const correctPassword = "socialmedia";
-
 describe("Logout test", () => {
   it("should allow a valid user to log out", () => {
     cy.visit("/");
@@ -8,8 +5,8 @@ describe("Logout test", () => {
     cy.get("#registerModal").contains("Login").click();
     cy.wait(500);
     cy.get("#loginForm").should("be.visible");
-    cy.get("#loginEmail").type(correctEmail);
-    cy.get("#loginPassword").type(correctPassword);
+    cy.get("#loginEmail").type("correctEmail");
+    cy.get("#loginPassword").type("correctPassword");
     cy.get("button[type=submit]").contains("Login").click();
     cy.wait(2000);
     // check storage for token
