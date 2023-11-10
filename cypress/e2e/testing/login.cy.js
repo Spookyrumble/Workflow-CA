@@ -1,8 +1,3 @@
-const correctEmail = "cypressTesterHMA@noroff.no";
-const correctPassword = "socialmedia";
-const wrongEmail = "wrongEmail@wrong.wrong";
-const wrongPassword = "wrongPassword";
-
 describe("Login flow", () => {
   it("should deny empty input submit", () => {
     cy.visit("/");
@@ -11,7 +6,12 @@ describe("Login flow", () => {
     cy.wait(500);
     cy.get("#loginForm").should("be.visible");
     cy.get("button[type=submit]").contains("Login").click();
-    cy.get("#loginEmail:invalid").should("exist");
+    cy.get("#loginEmail:invalid")
+      .should("exist")
+      .then(($input) => {
+        const message = $input[0].validationMessage;
+        cy.task("log", `Validation Message: ${message}`);
+      });
   });
 
   it("should deny empty password input", () => {
@@ -20,9 +20,14 @@ describe("Login flow", () => {
     cy.get("#registerModal").contains("Login").click();
     cy.wait(500);
     cy.get("#loginForm").should("be.visible");
-    cy.get("#loginEmail").type(correctEmail);
+    cy.get("#loginEmail").type(Cypress.env("correctEmail"));
     cy.get("button[type=submit]").contains("Login").click();
-    cy.get("#loginPassword:invalid").should("exist");
+    cy.get("#loginPassword:invalid")
+      .should("exist")
+      .then(($input) => {
+        const message = $input[0].validationMessage;
+        cy.task("log", `Validation Message: ${message}`);
+      });
   });
 
   it("should deny invalid email", () => {
@@ -31,9 +36,14 @@ describe("Login flow", () => {
     cy.get("#registerModal").contains("Login").click();
     cy.wait(500);
     cy.get("#loginForm").should("be.visible");
-    cy.get("#loginEmail").type(wrongEmail);
+    cy.get("#loginEmail").type(Cypress.env("wrongEmail"));
     cy.get("button[type=submit]").contains("Login").click();
-    cy.get("#loginEmail:invalid").should("exist");
+    cy.get("#loginEmail:invalid")
+      .should("exist")
+      .then(($input) => {
+        const message = $input[0].validationMessage;
+        cy.task("log", `Validation Message: ${message}`);
+      });
   });
 
   it("should deny wrong password", () => {
@@ -42,19 +52,25 @@ describe("Login flow", () => {
     cy.get("#registerModal").contains("Login").click();
     cy.wait(500);
     cy.get("#loginForm").should("be.visible");
-    cy.get("#loginEmail").type(correctEmail);
-    cy.get("#loginPassword").type(wrongPassword);
+    cy.get("#loginEmail").type(Cypress.env("correctEmail"));
+    cy.get("#loginPassword").type(Cypress.env("wrongPassword"));
+    cy.wait(500);
     cy.get("button[type=submit]").contains("Login").click();
-  });
+    cy.on("window:alert", (text) => {
+      expect(text).to.contains(
+        "Either your username was not found or your password is incorrect",
+      );
+    });
 
-  it("should allow a valid user to log in", () => {
-    cy.visit("/");
-    cy.wait(500);
-    cy.get("#registerModal").contains("Login").click();
-    cy.wait(500);
-    cy.get("#loginForm").should("be.visible");
-    cy.get("#loginEmail").type(correctEmail);
-    cy.get("#loginPassword").type(correctPassword);
-    cy.get("button[type=submit]").contains("Login").click();
+    it("should allow a valid user to log in", () => {
+      cy.visit("/");
+      cy.wait(500);
+      cy.get("#registerModal").contains("Login").click();
+      cy.wait(500);
+      cy.get("#loginForm").should("be.visible");
+      cy.get("#loginEmail").type(Cypress.env("correctEmail"));
+      cy.get("#loginPassword").type(Cypress.env("correctPassword"));
+      cy.get("button[type=submit]").contains("Login").click();
+    });
   });
 });
